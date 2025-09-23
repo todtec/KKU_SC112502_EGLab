@@ -1,4 +1,4 @@
-# Introduction to R for Biology: A Comprehensive Guide
+# Basic R Programming in Genetics: A Comprehensive Guide
 
 **Author:** Todsapol Techo  
 **Date:** 2025-09-23
@@ -485,3 +485,4 @@ print(chi_square_test)
 - [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
 - [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
+
