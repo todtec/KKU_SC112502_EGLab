@@ -1,0 +1,487 @@
+# Introduction to R for Biology: A Comprehensive Guide
+
+**Author:** Todsapol Techo  
+**Date:** 2025-09-23
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Basic Arithmetic Operations and Mathematical Functions](#basic-arithmetic-operations-and-mathematical-functions)
+- [Data Types in R](#data-types-in-r)
+- [Variables and Assignment](#variables-and-assignment)
+- [Vectors: Collections of Biological Data](#vectors-collections-of-biological-data)
+- [Factors: Categorical Data in Biology](#factors-categorical-data-in-biology)
+- [Data Frames: Structured Biological Data](#data-frames-structured-biological-data)
+- [Working with Built-in Datasets](#working-with-built-in-datasets)
+- [Modern Data Manipulation with dplyr](#modern-data-manipulation-with-dplyr)
+- [Data Visualization for Biological Data](#data-visualization-for-biological-data)
+- [Basic Statistics for Biological Research](#basic-statistics-for-biological-research)
+- [Working with Biological Data Files](#working-with-biological-data-files)
+- [Comprehensive Biological Examples](#comprehensive-biological-examples)
+- [Practice Exercises](#practice-exercises)
+- [Additional Resources](#additional-resources)
+- [Next Steps in Biological Data Analysis](#next-steps-in-biological-data-analysis)
+- [Conclusion](#conclusion)
+
+## Introduction
+
+This document provides a comprehensive introduction to R programming specifically designed for biology students and researchers. R serves as both a programming language and statistical software environment, offering powerful capabilities for biological data analysis, statistical computing, and visualization. The following sections systematically introduce fundamental concepts essential for conducting biological research and data analysis.
+
+### What is R and Why Should Biology Students Learn It?
+
+R is a free, open-source programming language and software environment designed specifically for statistical computing and graphics. For biology students, R offers powerful tools to analyze experimental data, create publication-quality visualizations, conduct statistical tests common in biological research, work with large biological datasets, and automate repetitive tasks in research workflows.
+
+### What is R Markdown?
+
+R Markdown allows you to write explanatory text, include executable R code chunks, show both code and output, and export to various formats. R Markdown is ideal for reproducible research and lab reports in biological sciences.
+
+## Basic Arithmetic Operations and Mathematical Functions
+
+R functions as an advanced calculator, supporting standard mathematical operations essential for biological calculations and statistical analysis.
+
+```r
+# Basic arithmetic operations
+1 + 1
+5 + 3
+10 - 4
+6 * 7
+15 / 3
+2^3
+
+# Mathematical functions commonly used in biology
+log(100)    # Natural logarithm
+sqrt(9)     # Square root
+exp(5)      # Exponential function
+
+# Additional useful operations for biology
+17 %/% 5    # Integer division
+17 %% 5     # Modulo (remainder)
+```
+
+These mathematical functions represent core operations frequently utilized in biological calculations, statistical modeling, and data transformation workflows.
+
+## Data Types in R
+
+Understanding R's fundamental data types ensures proper data handling and prevents computational errors in biological data analysis workflows.
+
+```r
+# Numeric (decimal numbers) - default for measurements
+plant_height <- 10.5
+class(plant_height)
+
+# Integer - for counts and discrete data
+cell_count <- 1000L  # The L suffix creates an integer
+class(cell_count)
+
+# Complex numbers - for advanced mathematical calculations
+x <- 9i + 3
+class(x)
+
+# Character (text) - for species names, treatments, etc.
+species_name <- "Arabidopsis thaliana"
+class(species_name)
+
+# Logical (TRUE/FALSE) - for conditions and filtering
+is_flowering <- TRUE
+class(is_flowering)
+
+# Check data types
+is.numeric(plant_height)
+is.character(species_name)
+```
+
+## Variables and Assignment
+
+Variables store biological data values for subsequent analysis. R provides multiple assignment operators, with the arrow operator being the conventional standard.
+
+```r
+# Assign biological measurements to variables
+plant_height <- 10.5
+leaf_count <- 25
+temperature <- 22.3
+
+# Variables are case-sensitive
+Control_Group <- 15
+control_group <- 12  # Different from Control_Group
+
+# Perform calculations with variables
+total_height <- plant_height * 2
+average_temp <- (temperature + 20 + 25) / 3
+
+# Display results
+plant_height
+total_height
+average_temp
+```
+
+## Vectors: Collections of Biological Data
+
+Vectors represent sequences of elements sharing the same data type, forming the fundamental data structure for biological measurements and observations.
+
+```r
+# Create vectors for biological data
+plant_heights <- c(10.2, 15.7, 12.3, 9.8, 11.5)  # Height measurements in cm
+species <- c("Arabidopsis", "Nicotiana", "Oryza", "Zea", "Solanum")
+treatment_response <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+
+# Display vectors
+plant_heights
+species
+
+# Vector operations (vectorization)
+plant_heights + 5     # Add 5cm to each height
+plant_heights * 2     # Convert to different units
+
+# Vector statistics
+mean(plant_heights)
+median(plant_heights)
+min(plant_heights)
+max(plant_heights)
+sum(plant_heights)
+length(plant_heights)  # Number of observations
+sd(plant_heights)      # Standard deviation
+
+# Vector indexing and subsetting
+plant_heights[1]              # First measurement
+plant_heights[c(1, 3, 5)]    # First, third, and fifth measurements
+plant_heights[2:4]           # Measurements 2 through 4
+species[plant_heights > 12]   # Species with heights > 12cm
+```
+
+## Factors: Categorical Data in Biology
+
+Factors represent categorical data with predefined levels, essential for experimental design and statistical analysis in biological research.
+
+```r
+# Create factors for experimental treatments
+treatments <- factor(c("Control", "Drought", "Fertilizer", "Control", "Drought"))
+treatments
+
+# Check factor levels
+levels(treatments)
+
+# Count occurrences - useful for experimental design
+table(treatments)
+
+# Convert character data to factors
+animals <- c("Dog", "Cat", "Dog", "Dog", "Cat")
+animals_factor <- as.factor(animals)
+class(animals_factor)
+levels(animals_factor)
+```
+
+## Data Frames: Structured Biological Data
+
+Data frames represent two-dimensional data structures resembling laboratory data tables, accommodating different data types across columns while maintaining consistent row lengths.
+
+```r
+# Create a biological experiment data frame
+experiment <- data.frame(
+  Plant_ID = 1:8,
+  Species = c("Arabidopsis", "Arabidopsis", "Nicotiana", "Nicotiana", 
+              "Oryza", "Oryza", "Zea", "Zea"),
+  Treatment = factor(c("Control", "Drought", "Control", "Drought", 
+                      "Control", "Fertilizer", "Control", "Fertilizer")),
+  Initial_Height = c(5.2, 5.0, 8.3, 8.1, 12.4, 12.6, 15.2, 15.0),
+  Final_Height = c(10.2, 8.7, 15.3, 12.8, 25.4, 28.1, 22.3, 24.7),
+  Leaf_Count = c(8, 6, 12, 9, 7, 8, 5, 6)
+)
+
+# Display the data frame
+experiment
+
+# Calculate growth
+experiment$Growth <- experiment$Final_Height - experiment$Initial_Height
+
+# Data frame exploration
+class(experiment)
+str(experiment)        # Structure of the data
+head(experiment)       # First few rows
+tail(experiment)       # Last few rows
+summary(experiment)    # Summary statistics
+
+# Access specific columns
+experiment$Species
+experiment[,"Growth"]
+
+# Access specific rows and columns
+experiment[2, 4]                                    # Row 2, Column 4
+experiment[1:3, c("Species", "Treatment")]         # Multiple rows and columns
+experiment[experiment$Growth > 10, ]               # Rows where growth > 10
+```
+
+## Working with Built-in Datasets
+
+R includes numerous built-in datasets for learning and analysis. The iris dataset serves as a classic example for biological data analysis techniques.
+
+```r
+# Load the iris dataset
+data(iris)
+df_iris <- iris
+
+# Explore the dataset
+head(df_iris)
+str(df_iris)
+summary(df_iris)
+
+# Column operations
+colnames(df_iris)
+```
+
+## Modern Data Manipulation with dplyr
+
+The dplyr package provides efficient functions for biological data manipulation, offering intuitive syntax for common analysis tasks.
+
+```r
+# Install and load dplyr (install only needed once)
+# install.packages("dplyr")
+
+# Load the package (needed in each R session)
+library(dplyr)
+
+# Column selection
+df_1 <- select(df_iris, Sepal.Length, Petal.Length)
+str(df_1)
+df_2 <- select(df_iris, 1:2)
+str(df_2)
+
+# Row filtering for specific conditions
+df_3 <- filter(df_iris, Species == "setosa")
+str(df_3)
+df_4 <- filter(df_iris, Sepal.Length > 6.0)
+str(df_4)
+
+# Data arrangement
+df_5 <- arrange(df_iris, Sepal.Length)          # Ascending order
+str(df_5)
+df_6 <- arrange(df_iris, desc(Sepal.Length))    # Descending order
+str(df_6)
+
+# Logical comparisons for data filtering
+numbers <- c(100, 200, 300, 50)
+numbers <= 100
+"setosa" == "Setosa"  # Case sensitive
+```
+
+## Data Visualization for Biological Data
+
+Data visualization provides essential tools for understanding biological data distributions and relationships, enabling effective communication of research findings.
+
+```r
+# Histogram for data distribution
+hist(df_iris$Sepal.Length, 
+     main = "Distribution of Sepal Length",
+     xlab = "Sepal Length (cm)",
+     col = "lightgreen")
+
+# Box plot for comparative analysis
+boxplot(df_iris[,c("Sepal.Length", "Petal.Length")],
+        main = "Comparison of Sepal and Petal Lengths",
+        ylab = "Length (cm)",
+        col = c("lightblue", "salmon"))
+```
+
+### Advanced Plotting Examples
+
+```r
+# Scatter plot for relationships
+plot(df_iris$Sepal.Length, df_iris$Petal.Length,
+     main = "Sepal Length vs. Petal Length",
+     xlab = "Sepal Length (cm)",
+     ylab = "Petal Length (cm)",
+     col = df_iris$Species,
+     pch = 16)
+legend("topleft", legend = levels(df_iris$Species), 
+       col = 1:3, pch = 16)
+
+# Bar plot for categorical data
+species_counts <- table(df_iris$Species)
+barplot(species_counts,
+        main = "Number of Samples by Species",
+        xlab = "Species",
+        ylab = "Count",
+        col = c("lightgreen", "lightblue", "salmon"))
+
+# Box plot by groups
+boxplot(Petal.Length ~ Species, data = df_iris,
+        main = "Petal Length by Species",
+        xlab = "Species",
+        ylab = "Petal Length (cm)",
+        col = c("lightgreen", "lightblue", "salmon"))
+```
+
+## Basic Statistics for Biological Research
+
+Understanding statistical analysis is crucial for interpreting biological experiments and drawing valid conclusions.
+
+```r
+# Descriptive statistics for biological measurements
+sepal_lengths <- df_iris$Sepal.Length
+
+# Calculate comprehensive statistics
+mean_length <- mean(sepal_lengths)
+median_length <- median(sepal_lengths)
+min_length <- min(sepal_lengths)
+max_length <- max(sepal_lengths)
+sd_length <- sd(sepal_lengths)
+var_length <- var(sepal_lengths)
+
+# Create summary table
+bio_stats <- data.frame(
+  Statistic = c("Mean", "Median", "Minimum", "Maximum", 
+                "Standard Deviation", "Variance"),
+  Value = c(mean_length, median_length, min_length, 
+            max_length, sd_length, var_length)
+)
+bio_stats
+```
+
+### Statistical Testing
+
+```r
+# T-test for comparing two groups
+setosa_petals <- df_iris$Petal.Length[df_iris$Species == "setosa"]
+versicolor_petals <- df_iris$Petal.Length[df_iris$Species == "versicolor"]
+
+t_test_result <- t.test(versicolor_petals, setosa_petals)
+t_test_result
+
+# Correlation analysis
+correlation <- cor(df_iris$Sepal.Length, df_iris$Petal.Length)
+correlation
+
+# Test correlation significance
+cor_test <- cor.test(df_iris$Sepal.Length, df_iris$Petal.Length)
+cor_test
+
+# Visualization with regression line
+plot(df_iris$Sepal.Length, df_iris$Petal.Length,
+     main = "Sepal Length vs. Petal Length with Regression Line",
+     xlab = "Sepal Length (cm)",
+     ylab = "Petal Length (cm)",
+     pch = 16)
+abline(lm(df_iris$Petal.Length ~ df_iris$Sepal.Length), col = "red", lwd = 2)
+```
+
+## Working with Biological Data Files
+
+```r
+# Reading data from files (common in biological research)
+# CSV files are most common for experimental data
+my_data <- read.csv("mendelian_experiment_data.csv")
+head(my_data)
+
+# For tab-delimited files
+# my_data <- read.table("data.txt", header = TRUE, sep = "\t")
+
+# Writing data to files
+write.csv(experiment, "my_experiment.csv", row.names = FALSE)
+```
+
+## Comprehensive Biological Examples
+
+### Plant Growth Analysis
+
+```r
+# Create a realistic biological dataset
+set.seed(123)  # For reproducibility
+plant_study <- data.frame(
+  Plant_ID = 1:30,
+  Species = rep(c("Species_A", "Species_B", "Species_C"), each = 10),
+  Treatment = rep(c("Control", "Low_Nutrient", "High_Nutrient"), 10),
+  Initial_Height = runif(30, 3, 8),
+  Temperature = rep(c(20, 25, 30), 10),
+  stringsAsFactors = TRUE
+)
+
+# Simulate realistic growth responses
+plant_study$Final_Height <- with(plant_study, {
+  base_growth <- Initial_Height * 1.5
+  species_effect <- ifelse(Species == "Species_A", 1.2, 
+                          ifelse(Species == "Species_B", 1.0, 0.8))
+  treatment_effect <- ifelse(Treatment == "Control", 1.0,
+                            ifelse(Treatment == "Low_Nutrient", 0.8, 1.3))
+  temp_effect <- 1 + (Temperature - 25) * 0.02
+  
+  base_growth * species_effect * treatment_effect * temp_effect + 
+    rnorm(30, 0, 0.5)
+})
+
+plant_study$Growth_Rate <- plant_study$Final_Height - plant_study$Initial_Height
+write.csv(plant_study, "plant_study.csv", row.names = FALSE)
+
+# Analyze the biological data
+head(plant_study)
+summary(plant_study)
+
+# Visualization of biological results
+boxplot(Growth_Rate ~ Treatment, data = plant_study,
+        main = "Plant Growth Rate by Nutrient Treatment",
+        xlab = "Treatment",
+        ylab = "Growth Rate (cm)",
+        col = c("lightcoral", "lightyellow", "lightgreen"))
+
+# Statistical comparison
+control <- plant_study$Growth_Rate[plant_study$Treatment == "Control"]
+High_Nutrient <- plant_study$Growth_Rate[plant_study$Treatment == "High_Nutrient"]
+
+t_test_result <- t.test(control, High_Nutrient)
+t_test_result
+```
+
+### Chi-square Test for Mendelian Experiments
+
+```r
+# Read the dataset using base R
+mendelian_data <- read.csv("mendelian_experiment_data.csv", stringsAsFactors = FALSE)
+
+# Examine data structure using base R functions
+str(mendelian_data)
+head(mendelian_data)
+
+# Generate frequency tables for key phenotypic variables
+phenotype_table <- table(mendelian_data$Phenotype)
+print(phenotype_table)
+
+# Convert table to data frame for comprehensive analysis
+phenotype_summary <- data.frame(Phenotype = names(phenotype_table),
+                                Observed = as.numeric(phenotype_table))
+
+# Define expected ratios based on Mendelian dihybrid cross predictions
+expected_ratios <- c(
+  "Round Yellow" = 9/16,
+  "Round Green" = 3/16,
+  "Wrinkled Yellow" = 3/16,
+  "Wrinkled Green" = 1/16)
+
+# Extract observed counts for chi-square analysis
+observed <- phenotype_table[names(expected_ratios)]
+
+# Perform chi-square goodness of fit test using chisq.test function
+# The function automatically calculates expected frequencies from probabilities
+chi_square_test <- chisq.test(x = observed, p = expected_ratios)
+print(chi_square_test)
+```
+
+### P-value Interpretation
+
+- **P-value < 0.05:** Reject the null hypothesis. The observed ratios significantly differ from expected Mendelian ratios.
+- **P-value ≥ 0.05:** Fail to reject the null hypothesis. The observed ratios are consistent with expected Mendelian ratios.
+
+## Practice Exercises
+
+1. Create a vector containing the weights (in grams) of 10 different laboratory mice specimens.
+2. Calculate the mean, median, standard deviation, and range of these weights.
+3. Create a histogram of the mouse weights and describe the distribution.
+4. Create a data frame with columns for Sample ID, Species (choose 3 different species), Treatment (Control/Experimental), and two measurement variables relevant to your field of study.
+5. Calculate the average of your measurements grouped by Species and Treatment using appropriate R functions.
+6. Create a box plot comparing one of your measurements across treatment groups and interpret the results.
+7. Perform a t-test to compare measurements between control and experimental groups.
+8. Calculate the correlation between your two measurement variables and test for statistical significance.
+
+## Additional Resources
+
+- [R for Data Science](https://r4ds.had.co.nz/) - Comprehensive introduction to R programming
+- [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
+- [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
+- [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
