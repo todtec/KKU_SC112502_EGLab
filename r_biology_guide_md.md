@@ -20,8 +20,7 @@
 - [Comprehensive Biological Examples](#comprehensive-biological-examples)
 - [Practice Exercises](#practice-exercises)
 - [Additional Resources](#additional-resources)
-- [Next Steps in Biological Data Analysis](#next-steps-in-biological-data-analysis)
-- [Conclusion](#conclusion)
+
 
 ## Introduction
 
@@ -485,4 +484,5 @@ print(chi_square_test)
 - [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
 - [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
+
 
