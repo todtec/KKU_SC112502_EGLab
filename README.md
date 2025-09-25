@@ -20,4 +20,10 @@ Dataset: [Link](data)
 - กลุ่ม 7 8 9 = q3_dataset:q3_microbial_growth_data.csv
 - กลุ่ม 10 11 12 = q4_dataset:q4_seed_germination_data.csv
 
+นักศึกษาตอบคำถามที่เกี่ยวข้องกับข้อมูลของกลุ่มตัวเองเท่านั้น
+
 ข้อมูลของแต่ละกลุ่ม สามารถ download ใน [Link](data)
+
+## ข้อมูลเพิ่มเติม
+- การนำไฟล์ csv เข้าสู่โปรแกรม R [Link](csv_import_guide.md)
+- ข้อแนะนำในการตอบคำถามแต่ละข้อ [Link](questions/biology_r_answer_hints.md)
