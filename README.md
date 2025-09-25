@@ -20,5 +20,4 @@ Dataset: [Link](data)
 - กลุ่ม 4 5 6 = q2_dataset:q2_animal_behavior_data.csv
 - กลุ่ม 7 8 9 = q3_dataset:q3_microbial_growth_data.csv
 - กลุ่ม 10 11 12 = q4_dataset:q4_seed_germination_data.csv
-
-* ข้อมูลของแต่ละกลุ่ม สามารถ download ใน [Link](data)
+ข้อมูลของแต่ละกลุ่ม สามารถ download ใน [Link](data)
