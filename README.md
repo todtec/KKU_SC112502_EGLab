@@ -11,14 +11,14 @@ Dataset: [Link](data)
 
 - รายละเอียดคำถาม (งานกลุ่ม): [Link](questions/biology_r_questions_v5_Thai.md)
 - ไฟล์ที่ต้องส่งคำตอบ (rmarkdown): [Link](questions/example_answer_file.Rmd)
-- ส่งงานผ่านระบบ digiclass KKU กำหนดส่งวันที่ 8 ตุลาคม 2568 เวลา 23.59
+- ส่งงานผ่านระบบ digiclass KKU กำหนดส่งวันที่ ........ เวลา ..........
 
 ## รายละเอียดข้อมูลแบ่งตามกลุ่ม
 
 - กลุ่ม 1 2 3 = q1_dataset:q1_plant_photosynthesis_data.csv
 - กลุ่ม 4 5 6 = q2_dataset:q2_animal_behavior_data.csv
-- กลุ่ม 7 8 9 = q3_dataset:q3_microbial_growth_data.csv
-- กลุ่ม 10 11 12 = q4_dataset:q4_seed_germination_data.csv
+- กลุ่ม 7 8 = q3_dataset:q3_microbial_growth_data.csv
+- กลุ่ม 9 10 = q4_dataset:q4_seed_germination_data.csv
 
 นักศึกษาตอบคำถามที่เกี่ยวข้องกับข้อมูลของกลุ่มตัวเองเท่านั้น
 
