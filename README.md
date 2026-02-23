@@ -3,7 +3,7 @@
 
 [R and RStudio Installation Guide](r_installation_guide.md)
 
-Lab13:  Basic R Programming in Genetics [(English version)](r_biology_guide_md.md)/[(Thai version)](r_biology_guide_thai_md.md)
+Lab13-14:  Basic R Programming in Genetics [(English version)](r_biology_guide_md.md)/[(Thai version)](r_biology_guide_thai_md.md)
 
 Dataset: [Link](data)
 
