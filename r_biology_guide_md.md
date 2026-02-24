@@ -422,6 +422,13 @@ print(phenotype_table)
 phenotype_summary <- data.frame(Phenotype = names(phenotype_table),
                                 Observed = as.numeric(phenotype_table))
 
+# Visualization of biological data
+barplot(Observed ~ Phenotype, data = phenotype_summary,
+        main = "Number of Plant Genotype",
+        xlab = "Phenotype",
+        ylab = "Number of Plant",
+        col = c("lightcoral", "lightyellow", "lightgreen"))
+
 # Define expected ratios based on Mendelian dihybrid cross predictions
 expected_ratios <- c(
   "Round Yellow" = 9/16,
@@ -460,6 +467,7 @@ print(chi_square_test)
 - [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
 - [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
+
 
 
 
