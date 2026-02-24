@@ -15,19 +15,19 @@
 **คำอธิบาย Dataset:** พืช 60 ต้นจากสามสายพันธุ์ (Arabidopsis, Tobacco, Spinach) พร้อมการวัดระดับ chlorophyll อัตรา photosynthesis และสภาพแวดล้อม
 
 ### คำถาม 1.1 - การสำรวจข้อมูล (Data Exploration)
-โหลด plant photosynthesis dataset และใช้ฟังก์ชัน R ที่เหมาะสมเพื่อแสดงแถวแรก 8 แถว ตรวจสอบโครงสร้างของ data frame และสร้าง summary statistics สำหรับตัวแปรทั้งหมด ประเภทข้อมูล (data types) ที่มีอยู่ในแต่ละ column คืออะไร?
+โหลดข้อมูล plant photosynthesis dataset และใช้ฟังก์ชัน R ที่เหมาะสมเพื่อแสดงแถวแรก 8 แถว ตรวจสอบโครงสร้างของตารางข้อมูล และสร้าง summary statistics สำหรับตัวแปรทั้งหมด ระบุประเภทข้อมูล (data types) ในแต่ละ column
 
 ### คำถาม 1.2 - การดำเนินการ Vector และ Statistics
-แยกการวัด photosynthesis rate ออกมาเป็น vector แยกต่างหาก คำนวณค่าเฉลี่ย (mean) ค่ามัธยฐาน (median) ค่าเบี่ยงเบนมาตรฐาน (standard deviation) ค่าต่ำสุด ค่าสูงสุด และจำนวนการสังเกตทั้งหมด พืชต้นใดที่มี photosynthesis rate สูงสุด?
+สร้าง vector เฉพาะ photosynthesis rate และคำนวณค่าเฉลี่ย (mean) ค่ามัธยฐาน (median) ค่าเบี่ยงเบนมาตรฐาน (standard deviation) ค่าต่ำสุด ค่าสูงสุด และจำนวนการสังเกตทั้งหมด จากนั้นระบุว่าพืชต้นใดที่มี photosynthesis rate สูงสุด
 
 ### คำถาม 1.3 - การวิเคราะห์ข้อมูลเชิงหมวดหมู่ (Categorical Data Analysis)
-แปลงตัวแปร Light_Intensity เป็น factor และกำหนดจำนวนพืชที่ทดสอบภายใต้แต่ละสภาวะแสง สร้าง frequency table ที่แสดงการกระจายตัวของพืชในระดับความเข้มแสงต่างๆ
+เปลี่ยนตัวแปร Light_Intensity เป็นข้อมูลประเภท factor และหาจำนวนพืชที่ทดสอบภายใต้แต่ละสภาวะแสง สร้างตารางความถี่ (frequency table) ที่แสดงการกระจายตัวของพืชในระดับความเข้มแสงต่างๆ และสร้างแผนภูมินำเสนอค่าความถี่
 
 ### คำถาม 1.4 - การกรองข้อมูลด้วย Base R (Data Filtering with Base R)
-โดยใช้วิธี indexing ของ base R สร้าง subset ที่ประกอบด้วยพืช Arabidopsis เท่านั้นที่มี photosynthesis rates มากกว่า 15.0 มีพืชจำนวนกี่ต้นที่ตรงตามเกณฑ์นี้ และค่าเฉลี่ยของ initial และ final chlorophyll levels คือเท่าไร?
+ให้นักศึกษาใช้วิธีการ indexing ของโปรแกรม base R สร้างตารางย่อยที่ประกอบด้วยพืช Arabidopsis เท่านั้น โดยต้องมี photosynthesis rates มากกว่า 15.0 ระบุจำนวนพืชที่ตรงตามเกณฑ์นี้ จากนั้นหาค่าเฉลี่ยของ initial และ final chlorophyll levels ว่าคือเท่าไร
 
 ### คำถาม 1.5 - การจัดการข้อมูลด้วย dplyr (Data Manipulation with dplyr)
-ใช้ฟังก์ชัน dplyr กรอง dataset ให้รวมเฉพาะพืชที่ปลูกภายใต้สภาวะแสงเข้มสูง (High light intensity) เลือก columns สำหรับ Species, CO2_Level และ Photosynthesis_Rate และจัดเรียงผลลัพธ์ตาม photosynthesis rate จากสูงไปต่ำ
+ใช้ฟังก์ชัน dplyr กรองชุดข้อมูล (dataset) ให้เหลือเพียงพืชที่ปลูกภายใต้สภาวะแสงเข้มสูง (High light intensity) และคัดเลือก columns เฉพาะ Species, CO2_Level และ Photosynthesis_Rate จัดเรียงผลลัพธ์ตาม photosynthesis rate จากสูงไปต่ำ
 
 ---
 
