@@ -1,8 +1,11 @@
 # คำถามประเมินการเขียนโปรแกรม R
 
 กลุ่ม 1 2 3 = q1_dataset:q1_plant_photosynthesis_data.csv
+
 กลุ่ม 4 5 6 = q2_dataset:q2_animal_behavior_data.csv
+
 กลุ่ม 7 8 = q3_dataset:q3_microbial_growth_data.csv
+
 กลุ่ม 9 10 = q4_dataset:q4_seed_germination_data.csv
 
 สัดส่วนคะแนน
@@ -93,3 +96,4 @@
 
 
 ---
+
