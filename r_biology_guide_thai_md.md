@@ -188,9 +188,6 @@ experiment <- data.frame(
 # แสดงเดต้าเฟรม
 experiment
 
-# คำนวณการเจริญเติบโต
-experiment$Growth <- experiment$Final_Height - experiment$Initial_Height
-
 # การสำรวจเดต้าเฟรม
 class(experiment)
 str(experiment)        # โครงสร้างของข้อมูล
@@ -206,6 +203,9 @@ experiment[,"Growth"]
 experiment[2, 4]                                    # แถว 2, คอลัมน์ 4
 experiment[1:3, c("Species", "Treatment")]         # หลายแถวและคอลัมน์
 experiment[experiment$Growth > 10, ]               # แถวที่การเจริญเติบโต > 10
+
+# คำนวณการเจริญเติบโต
+experiment$Growth <- experiment$Final_Height - experiment$Initial_Height
 ```
 
 ## การทำงานกับชุดข้อมูลในตัว
