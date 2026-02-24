@@ -382,28 +382,8 @@ write.csv(experiment, "my_experiment.csv", row.names = FALSE)
 
 ```r
 # สร้างชุดข้อมูลทางชีววิทยาที่สมจริง
-set.seed(123)  # เพื่อความสามารถในการทำซ้ำ
-plant_study <- data.frame(
-  Plant_ID = 1:30,
-  Species = rep(c("Species_A", "Species_B", "Species_C"), each = 10),
-  Treatment = rep(c("Control", "Low_Nutrient", "High_Nutrient"), 10),
-  Initial_Height = runif(30, 3, 8),
-  Temperature = rep(c(20, 25, 30), 10),
-  stringsAsFactors = TRUE
-)
-
-# จำลองการตอบสนองการเจริญเติบโตที่สมจริง
-plant_study$Final_Height <- with(plant_study, {
-  base_growth <- Initial_Height * 1.5
-  species_effect <- ifelse(Species == "Species_A", 1.2, 
-                          ifelse(Species == "Species_B", 1.0, 0.8))
-  treatment_effect <- ifelse(Treatment == "Control", 1.0,
-                            ifelse(Treatment == "Low_Nutrient", 0.8, 1.3))
-  temp_effect <- 1 + (Temperature - 25) * 0.02
-  
-  base_growth * species_effect * treatment_effect * temp_effect + 
-    rnorm(30, 0, 0.5)
-})
+# นำเข้าชุดข้อมูลการศึกษาการเจริญเติบโตของพืช เข้าสู่ R
+plant_study <- read.csv("plant_study.csv")
 
 plant_study$Growth_Rate <- plant_study$Final_Height - plant_study$Initial_Height
 write.csv(plant_study, "plant_study.csv", row.names = FALSE)
