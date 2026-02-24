@@ -30,4 +30,3 @@ Dataset: [Link](data)
 
 ## ข้อมูลเพิ่มเติม
 - การนำไฟล์ csv เข้าสู่โปรแกรม R [Link](csv_import_guide.md)
-- ข้อแนะนำในการตอบคำถามแต่ละข้อ [Link](questions/biology_r_answer_hints.md)
