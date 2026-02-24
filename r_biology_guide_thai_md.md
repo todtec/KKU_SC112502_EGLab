@@ -425,6 +425,13 @@ print(phenotype_table)
 phenotype_summary <- data.frame(Phenotype = names(phenotype_table),
                                 Observed = as.numeric(phenotype_table))
 
+# Visualization of biological data
+barplot(Observed ~ Phenotype, data = phenotype_summary,
+        main = "Number of Plant Genotype",
+        xlab = "Phenotype",
+        ylab = "Number of Plant",
+        col = c("lightcoral", "lightyellow", "lightgreen"))
+
 # กำหนดอัตราส่วนที่คาดหวังตามการทำนายของเมนเดลสำหรับการผสมพันธุ์แบบสองคุณลักษณะ
 expected_ratios <- c(
   "Round Yellow" = 9/16,
