@@ -452,7 +452,7 @@ print(chi_square_test)
 
 ## Practice Exercises
 
-1. Create a vector containing the weights (in grams) of 10 different laboratory mice specimens.
+1. Create a vector containing the weights (22.5, 19.8, 25.3, 21.0, 23.7, 18.4, 26.1, 20.6, 24.2, 22.9 in grams) of 10 different laboratory mice specimens.
 2. Calculate the mean, median, standard deviation, and range of these weights.
 3. Create a histogram of the mouse weights and describe the distribution.
 4. Create a data frame with columns for Sample ID, Species (choose 3 different species), Treatment (Control/Experimental), and two measurement variables relevant to your field of study.
@@ -467,6 +467,7 @@ print(chi_square_test)
 - [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
 - [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
+
 
 
 
