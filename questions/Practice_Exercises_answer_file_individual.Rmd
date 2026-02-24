@@ -1,0 +1,56 @@
+---
+title: "Basic R programming in genetics"
+author: "Todsapol Techo: 777777777-7"
+date: "2025-09-25"
+output: html_document
+---
+
+Question 1: Create a vector containing the weights (in grams) of 10 different laboratory mice specimens.
+Answer 1:
+```{r}
+
+```
+
+Question 2: Calculate the mean, median, standard deviation, and range of these weights.
+Answer 2:
+```{r}
+
+```
+
+Question 3: Create a histogram of the mouse weights and describe the distribution.
+Answer 3:
+```{r}
+
+```
+
+Question 4: Create a data frame with columns for Sample ID, Species (choose 3 different species), Treatment (Control/Experimental), and two measurement variables relevant to your field of study.
+Answer 4:
+```{r}
+
+```
+
+Question 5: Calculate the average of your measurements grouped by Species and Treatment using appropriate R functions.
+Answer 5:
+```{r}
+
+```
+
+Question 6: Create a box plot comparing one of your measurements across treatment groups and interpret the results.
+Answer 6:
+```{r}
+
+```
+
+Question 7: Perform a t-test to compare measurements between control and experimental groups.
+Answer 7:
+```{r}
+
+```
+
+Question 8: Calculate the correlation between your two measurement variables and test for statistical significance.
+Answer 8:
+```{r}
+
+```
+
+# Use only rmarkdown format to submit
