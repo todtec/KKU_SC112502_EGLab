@@ -2,8 +2,8 @@
 
 กลุ่ม 1 2 3 = q1_dataset:q1_plant_photosynthesis_data.csv
 กลุ่ม 4 5 6 = q2_dataset:q2_animal_behavior_data.csv
-กลุ่ม 7 8 9 = q3_dataset:q3_microbial_growth_data.csv
-กลุ่ม 10 11 12 = q4_dataset:q4_seed_germination_data.csv
+กลุ่ม 7 8 = q3_dataset:q3_microbial_growth_data.csv
+กลุ่ม 9 10 = q4_dataset:q4_seed_germination_data.csv
 
 สัดส่วนคะแนน
 ข้อ 1-4 ข้อละ 1%
@@ -90,5 +90,6 @@
 
 ### คำถาม 4.5 - ผลกระทบของความถี่การรดน้ำด้วย dplyr (Water Frequency Impact with dplyr)
 ใช้ฟังก์ชัน dplyr จัดกลุ่มข้อมูลตาม Water_Frequency และคำนวณค่าเฉลี่ย germination percentage และ average days to germination สำหรับแต่ละตารางการรดน้ำ ความถี่การรดน้ำใดที่ให้ผลการงอกดีที่สุด?
+
 
 ---
