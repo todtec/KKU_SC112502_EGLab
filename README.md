@@ -8,12 +8,12 @@ Lab13-14:  Basic R Programming in Genetics [(English version)](r_biology_guide_m
 Dataset: [Link](data)
 
 ## Assignment 1:
-- Practice Exercises (งานเดี่ยว: 10%): [Link](questions/biology_r_questions_v5_Thai.md)
+- Practice Exercises (งานเดี่ยว: 10 คะแนน): [Link](questions/biology_r_questions_v5_Thai.md)
 - ไฟล์ที่ต้องส่งคำตอบ (rmarkdown): [Link](questions/Practice_Exercises_answer_file_individual.Rmd)
 - ส่งงานผ่านระบบ digiclass KKU กำหนดส่งวันที่ ........ เวลา ..........
 
 ## Assignment 2:
-- รายละเอียดคำถาม (งานกลุ่ม: 10%): [Link](questions/biology_r_questions_v5_Thai.md)
+- รายละเอียดคำถาม (งานกลุ่ม: 10 คะแนน): [Link](questions/biology_r_questions_v5_Thai.md)
 - ไฟล์ที่ต้องส่งคำตอบ (rmarkdown): [Link](questions/example_answer_file.Rmd)
 - ส่งงานผ่านระบบ digiclass KKU กำหนดส่งวันที่ ........ เวลา ..........
 
