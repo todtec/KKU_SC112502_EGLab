@@ -197,14 +197,14 @@ summary(experiment)    # สถิติสรุป
 
 # เข้าถึงคอลัมน์เฉพาะ
 experiment$Species
-experiment[,"Growth"]
+experiment[,"Leaf_Count"]
 
 # เข้าถึงแถวและคอลัมน์เฉพาะ
 experiment[2, 4]                                    # แถว 2, คอลัมน์ 4
 experiment[1:3, c("Species", "Treatment")]         # หลายแถวและคอลัมน์
-experiment[experiment$Growth > 10, ]               # แถวที่การเจริญเติบโต > 10
+experiment[experiment$Leaf_Count > 8, ]               # แถวที่จำนวนใบ > 8
 
-# คำนวณการเจริญเติบโต
+# คำนวณการเจริญเติบโต และเก็บข้อมูลการเจริญเติบโตในคอลัมน์ใหม้ (Growth)
 experiment$Growth <- experiment$Final_Height - experiment$Initial_Height
 ```
 
