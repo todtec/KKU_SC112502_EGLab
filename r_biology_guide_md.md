@@ -198,14 +198,14 @@ summary(experiment)    # Summary statistics
 
 # Access specific columns
 experiment$Species
-experiment[,"Growth"]
+experiment[,"Leaf_Count"]
 
 # Access specific rows and columns
 experiment[2, 4]                                    # Row 2, Column 4
 experiment[1:3, c("Species", "Treatment")]         # Multiple rows and columns
-experiment[experiment$Growth > 10, ]               # Rows where growth > 10
+experiment[experiment$Leaf_Count > 8, ]               # Rows where Leaf Count > 8
 
-# Calculate growth
+# Calculate growth and create the new column in the dataframe
 experiment$Growth <- experiment$Final_Height - experiment$Initial_Height
 ```
 
@@ -467,6 +467,7 @@ print(chi_square_test)
 - [Bioconductor](https://www.bioconductor.org/) - Specialized R packages for biological data analysis
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - Quick reference guides
 - [Stack Overflow R Community](https://stackoverflow.com/questions/tagged/r) - Programming help and solutions
+
 
 
 
